@@ -6,23 +6,23 @@ SpinWheeler is an interactive **"Spin the Wheel"** game platform that allows use
 
 ## 🚀 Features
 
--   **Create custom wheels** with unlimited segments
--   **Assign rewards** (points, items, prizes) to each segment
--   **Publish & share** games via a unique Game ID or link
--   **Live preview** of wheel during creation
--   **Public spins** with fun animations
--   **Spin history tracking**
--   **Firebase-powered backend** for real-time data
--   **Responsive design** with Tailwind CSS
+- **Create custom wheels** with unlimited segments
+- **Assign rewards** (points, items, prizes) to each segment
+- **Publish & share** games via a unique Game ID or link
+- **Live preview** of wheel during creation
+- **Public spins** with fun animations
+- **Spin history tracking**
+- **Firebase-powered backend** for real-time data
+- **Responsive design** with Tailwind CSS
 
 ---
 
 ## 🛠 Tech Stack
 
--   **Frontend:** [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [Tailwind CSS](https://tailwindcss.com/)
--   **Backend:** [Firebase Firestore](https://firebase.google.com/docs/firestore) + Firebase Auth
--   **State Management:** React Context API
--   **Deployment:** Vercel / Netlify
+- **Frontend:** [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [Tailwind CSS](https://tailwindcss.com/)
+- **Backend:** [Firebase Firestore](https://firebase.google.com/docs/firestore) + Firebase Auth
+- **State Management:** React Context API
+- **Deployment:** Vercel / Netlify
 
 ---
 
@@ -106,6 +106,38 @@ spinwheeler/
             }
           }
         }
+      }
+    }
+  }
+}
+  "games": {
+    "gameId_abc123": {
+      "title": "My First Wheel",
+      "creatorId": "user_001",
+      "createdAt": "2025-08-15T10:15:00Z",
+      "status": "published",
+      "segments": [
+        {
+          "label": "Run",
+          "color": "#FF5733",
+          "reward": {
+            "type": "points",
+            "value": 50
+          }
+        }
+      ],
+      "spins": {
+        "spin_001": {
+          "userId": "guest",
+          "timestamp": "2025-08-15T10:30:00Z",
+          "result": {
+            "label": "Run",
+            "reward": {
+              "type": "points",
+              "value": 50
+            }
+          }
+        }
       },
       "usersPlaying": 0
     }
@@ -132,6 +164,68 @@ spinwheeler/
 }
 
 ```
+
+## 👤 User Data Structure
+
+````json
+## 👤 User Data Structure
+
+```json
+{
+  "users": {
+    "user_001": {
+      "uid": "user_001",
+      "displayName": "Jane Doe",
+      "username": "janedoe",
+      "photoURL": "https://gabrielcool.com/avatar.png",
+      "createdAt": "2025-08-15T10",
+      "updatedAt": "2025-08-15T12",
+
+      "role": "user", // or "admin"
+      "isBanned": false,
+
+      "stats": {
+        "points": 1200,
+        "totalSpins": 3,
+        "gamesCreated": 2
+      },
+
+      "preferences": {
+        "theme": "system",
+        "notifications": {
+          "spins": true,
+          "follows": true,
+          "marketing": false
+        }
+      },
+
+      "playedGames": {
+        "gameId_abc123": {
+          "spinsCount": 2,
+          "lastSpinAt": "2025-08-15"
+        },
+        "gameId_xyz789": {
+          "spinsCount": 1,
+          "lastSpinAt": "2025-08-15"
+        }
+      },
+
+      "generatedGames": {
+        "gameId_abc123": {
+          "createdAt": "2025-08-15",
+          "playersCount": 57,
+          "status": "published"
+        },
+        "gameId_lmn456": {
+          "createdAt": "2025-08-15",
+          "playersCount": 12,
+          "status": "draft"
+        }
+      }
+    }
+  }
+}
+````
 
 ## 🔐 Firestore Rules
 

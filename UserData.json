@@ -1,0 +1,39 @@
+{
+    "users": {
+        "user_001": {
+            "creatorId": "user_001",
+            "createdAt": "2025-08-15T09:00:00Z",
+            "points": 1200,
+            "playedGames": {
+                "gameId_abc123": {
+                    "spins": [
+                        {
+                            "timestamp": "2025-08-15T10:30:00Z"
+                        },
+                        {
+                            "timestamp": "2025-08-15T11:00:00Z"
+                        }
+                    ]
+                },
+                "gameId_xyz789": {
+                    "spins": [
+                        {
+                            "timestamp": "2025-08-15T12:15:00Z"
+                        }
+                    ]
+                }
+            },
+            "generatedGames": {
+                "gameId_abc123": {
+                    "createdAt": "2025-08-15T10:15:00Z",
+                    "playersCount": 57
+                },
+                "gameId_lmn456": {
+                    "createdAt": "2025-08-15T13:45:00Z",
+                    "playersCount": 12
+                }
+            }
+        }
+    }
+}
+
