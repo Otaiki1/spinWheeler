@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore/lite";
 
+
+//firebase config to be moved to env file in the future
 const firebaseConfig = {
   apiKey: "AIzaSyDG1VYyrKFQbtQJWRNp5prFc8XoQSHp1g0",
   authDomain: "tenzies-3f843.firebaseapp.com",
